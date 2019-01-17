@@ -1,0 +1,11 @@
+cellular automata
+wolfram's new science
+binary search tree
+graphics programming
+lindenmeyer systems
+context-free
+recursion
+penrose triangle
+(non)euclidean space
+euclid's construction
+delta
