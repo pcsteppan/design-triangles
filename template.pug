@@ -1,0 +1,24 @@
+doctype strict
+
+html
+  head
+    style
+      include node_modules/tachyons/css/tachyons.min.css
+  body.bg-black-10.w-100
+    nav.fl-ns.w-25.min-vh-100
+      ul.list.fixed.ma0.pa0
+        each val in data
+          li
+            a(href="#" + val.name.split(' ').join('_')).f6.sans-serif.blue.link.b.hover-washed-blue.hover-bg-blue.pl3.pr1= val.name
+    section.fl-ns.w-75-ns.w-100
+      each val in data
+        //- if val.images > 0
+        div(id= val.name.split(' ').join('_')).wrapper.bt.bw4.blue.cb
+          h1.f4.sans-serif.blue.fl-ns.w-third-ns.w-100.db.pa0= val.name
+          div.w-two-thirds-ns.w-100.fl-ns
+            div.flex.flex-column.w-50-ns.w-100.fl-ns
+              - for (var i = 0; i < Math.floor(val.images.length / 2); i++)
+                img(src=`./images/${(val.name.split(' ').join('_'))}/${val.images[i]}`).w-100
+            div.flex.flex-column.w-50-ns.w-100.fl-ns
+              - for (var i = Math.floor(val.images.length / 2); i < val.images.length; i++)
+                img(src=`./images/${(val.name.split(' ').join('_'))}/${val.images[i]}`).w-100
